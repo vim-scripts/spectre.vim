@@ -23,7 +23,7 @@ syn keyword	spectreTodo	contained TODO
 syn keyword 	spectreStatement   ac alter check dc envlp info montecarlo noise options pac pdisto pnoise psp pss pxf 
 syn keyword 	spectreStatement   qpac qpnoise qpss qpxf set shell sp sweep tdr tran xf
 
-syn keyword 	spectreStatement   include section simulatorOptions modelParameter element outputParameter saveOptions simultor
+syn keyword 	spectreStatement   include section endsection simulatorOptions modelParameter element outputParameter saveOptions simultor
 
 syn keyword 	spectreStatement   abs acos acosh altergroup asin asinh atan atan2 atanh ceil correlate cos cosh else end 
 syn keyword 	spectreStatement   ends exp export floor fmod for function global hypot ic if inline int library local log
@@ -57,6 +57,7 @@ syn match   spectreStatement      "^ \=\.\I\+"
 syn region  spectreString	start=+L\="+ skip=+\\\\\|\\"+ end=+"+
 
 syn region spectreComment start="//" end="$" contains=spectreTodo
+syn region spectreComment start="^\*" end="$" contains=spectreTodo
 
 " Matching pairs of parentheses
 "==========================================
